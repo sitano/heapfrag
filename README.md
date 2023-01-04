@@ -24,18 +24,20 @@ Or install it yourself as:
     > Heapfrag::stat
 
     {
-      :fragmented_pages=>146,
+      :fragmented_pages=>146, # num of non full and non empty
       :pages_total=>154,
       :pages_seen=>154,
-      :pages_with_alive=>154,
-      :pages_with_dead=>146,
-      :pages_free=>0,
-      :pages_full=>8,
-      :objs_alive=>47812,
-      :objs_dead=>14961,
+      :pages_with_alive=>154, # pages with used slots
+      :pages_with_dead=>146,  # pages with free slots
+      :pages_free=>0,         # pages completelly free
+      :pages_full=>8,         # pages completelly full
+      :objs_alive=>47812,     # used slots
+      :objs_dead=>14961,      # free slots
                              0% 50% 95%  99% 99.9% 100%
       :heap_pages_fill_cdf=>[0, 22, 116, 133, 142, 154]
     }
+
+    fragmented = total - full - empty
 
 ## Quick start
 
